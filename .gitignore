@@ -1,0 +1,3 @@
+# Nix / Direnv specific files
+/result
+/.direnv/
