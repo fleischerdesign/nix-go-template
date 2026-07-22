@@ -1,3 +1,5 @@
-# Nix / Direnv specific files
-/result
-/.direnv/
+/app
+*.exe
+*.test
+*.out
+/vendor/

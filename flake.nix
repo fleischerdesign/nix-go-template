@@ -2,9 +2,10 @@
   description = "A reproducible Go development environment with modern tooling.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     flake-utils.url = "github:numtide/flake-utils";
   };
+
   outputs =
     {
       self,
@@ -28,12 +29,15 @@
             pkgs.go
             pkgs.gopls
             pkgs.delve
+            pkgs.golangci-lint
           ];
           shellHook = ''
             echo "Entering Go development environment..."
-            echo "Available tools: go, gopls, delve"
+            echo "Tools: go, gopls, delve, golangci-lint"
           '';
         };
+
+        formatter = pkgs.nixfmt-rfc-style;
       }
     );
 }
